@@ -8,23 +8,23 @@
     ".NETCoreApp,Version=v3.1": []
   },
   "packageFolders": {
-    "C:\\Users\\jose.bravo\\.nuget\\packages\\": {},
+    "C:\\Users\\alan.carando\\.nuget\\packages\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\jose.bravo\\source\\repos\\FreeSmoke\\FreeSmoke\\FreeSmoke.csproj",
+      "projectUniqueName": "C:\\Project\\FreeSmokeMVC\\FreeSmoke.csproj",
       "projectName": "FreeSmoke",
-      "projectPath": "C:\\Users\\jose.bravo\\source\\repos\\FreeSmoke\\FreeSmoke\\FreeSmoke.csproj",
-      "packagesPath": "C:\\Users\\jose.bravo\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\jose.bravo\\source\\repos\\FreeSmoke\\FreeSmoke\\obj\\",
+      "projectPath": "C:\\Project\\FreeSmokeMVC\\FreeSmoke.csproj",
+      "packagesPath": "C:\\Users\\alan.carando\\.nuget\\packages\\",
+      "outputPath": "C:\\Project\\FreeSmokeMVC\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\jose.bravo\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\alan.carando\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -32,8 +32,7 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "https://api.nuget.org/v3/index.json": {},
-        "https://pkgs.dev.azure.com/asociart/8e6af842-77ee-48bd-b7ea-3bc30d15fad2/_packaging/PackageNuget/nuget/v3/index.json": {}
+        "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "netcoreapp3.1": {
