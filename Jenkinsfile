@@ -11,11 +11,6 @@ pipeline {
     checkout scm
    }
   }
-  stage('clean') {
-   steps {
-	sh(script: "dotnet clean", returnStdout: true)
-   }
-  }
    stage('restore') {
    steps {
 	sh(script: "dotnet restore " + PATH, returnStdout: true)
