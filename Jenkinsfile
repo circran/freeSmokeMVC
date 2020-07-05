@@ -13,7 +13,7 @@ pipeline {
   }
   stage('clean') {
    steps {
-	sh(script: "dotnet clean " + PATH, returnStdout: true)
+	sh(script: "dotnet clean", returnStdout: true)
    }
   }
    stage('restore') {
