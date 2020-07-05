@@ -5,6 +5,7 @@ COPY *.csproj ./
 RUN dotnet restore
 
 COPY . ./
+RUN ls
 RUN dotnet publish -c Release -o publishdir
 
 FROM mcr.microsoft.com/dotnet/core/runtime-deps AS runtime
