@@ -1,26 +1,38 @@
-node {
-    def app
+def PATH = 'FreeSmoke.csproj'
+def RESOURCE_GROUP = 'freesmoke'
+def APP_NAME_DEV = 'freesmokeweb'
+def AZURE_CREDENTIAL_ID = 'freesmokeService'
 
-    stage('Clone repository') {
-        /* Cloning the Repository to our Workspace */
-
-        checkout scm
-    }
-
-    stage('Build image') {
-        /* This builds the actual image */
-
-        app = docker.build("josebravo/smoke")
-    }
-
-    stage('Push image') {
-        /* 
-			You would need to first register with DockerHub before you can push images to your account
-		*/
-        docker.withRegistry('https://registry.hub.docker.com', 'docker-hub') {
-            app.push("${env.BUILD_NUMBER}")
-            app.push("latest")
-            } 
-                echo "Trying to Push Docker Build to DockerHub"
-    }
+pipeline {
+ agent any
+ stages {
+  stage('Clone') {
+   steps {
+    checkout scm
+   }
+  }
+   stage('restore') {
+   steps {
+	sh(script: "dotnet restore " + PATH, returnStdout: true)
+   }
+  }
+  stage('Tests') {
+   steps {
+	sh(script: "dotnet test " + PATH, returnStdout: true)
+   }
+  }  
+  stage('Build') {
+   steps {
+    sh(script: "dotnet build --configuration Release " + PATH, returnStdout: true)
+   }
+  }
+	stage('deploy') {
+	steps {
+	  azureWebAppPublish azureCredentialsId: "freesmokeService",
+	  resourceGroup: "freesmoke" , 
+	  appName: "freesmokeweb", 
+	  sourceDirectory: "./"
+	  }
+  }
+ }
 }
